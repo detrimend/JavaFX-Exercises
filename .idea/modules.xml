@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GradeList_v1/GradeList_v1.iml" filepath="$PROJECT_DIR$/GradeList_v1/GradeList_v1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GradeList_v2/GradeList_v2.iml" filepath="$PROJECT_DIR$/GradeList_v2/GradeList_v2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GradeList_v3/GradeList_v3.iml" filepath="$PROJECT_DIR$/GradeList_v3/GradeList_v3.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaFX Exercises.iml" filepath="$PROJECT_DIR$/JavaFX Exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/LoginGUI/LoginGUI.iml" filepath="$PROJECT_DIR$/LoginGUI/LoginGUI.iml" />
     </modules>
