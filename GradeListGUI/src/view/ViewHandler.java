@@ -10,15 +10,15 @@ public class ViewHandler
 {
   private Scene currentScene;
   private Stage primaryStage;
-  private AddGradeViewController gradeViewController;
+  private AddGradeViewController addGradeViewController;
   private GradeListViewController gradeListViewController;
   private DetailsViewController detailsViewController;
-  private GradeListModel gradeListModel;
+  private GradeListModel model;
 
-  public ViewHandler(GradeListModel gradeListModel)
+  public ViewHandler(GradeListModel model)
   {
     this.currentScene = new Scene(new Region());
-    this.gradeListModel = gradeListModel;
+    this.model = model;
   }
 
   public void start(Stage primaryStage)
@@ -27,9 +27,21 @@ public class ViewHandler
     openView();
   }
 
-  public void openView()
+  public void openView(String id)
   {
-    Region root = loadGradeListView("GradeListView.fxml");
+    Region root = null;
+    switch (id)
+    {
+      case "list":
+        root = loadGradeListView("GradeListView.fxml");
+        break;
+      case "add":
+        root = loadAddGradeView("AddGradeView.fxml");
+        break;
+      case "details":
+        root = loadDetailsView("DetailsView.fxml");
+        break;
+    }
     currentScene.setRoot(root);
     String title = "";
     if (root.getUserData() != null)
@@ -43,17 +55,17 @@ public class ViewHandler
     primaryStage.show();
   }
 
-  private Region loadLoginView(String fxmlFile)
+  private Region loadGradeListView(String fxmlFile)
   {
-    if (loginViewController == null)
+    if (gradeListViewController == null)
     {
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
-        loginViewController = loader.getController();
-        loginViewController.init(this, gradeListModel,root);
+        gradeListViewController = loader.getController();
+        gradeListViewController.init(this, model, root);
       }
       catch (Exception e)
       {
@@ -62,9 +74,57 @@ public class ViewHandler
     }
     else
     {
-      loginViewController.reset();
+      gradeListViewController.reset();
     }
-    return loginViewController.getRoot();
+    return gradeListViewController.getRoot();
+  }
+
+  private Region loadAddGradeView(String fxmlFile)
+  {
+    if (addGradeViewController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        addGradeViewController = loader.getController();
+        addGradeViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      addGradeViewController.reset();
+    }
+    return addGradeViewController.getRoot();
+  }
+
+  private Region loadDetailsView(String fxmlFile)
+  {
+    if (detailsViewController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Region root = loader.load();
+        detailsViewController = loader.getController();
+        detailsViewController.init(this, model, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      detailsViewController.reset();
+    }
+    return detailsViewController.getRoot();
   }
 
   public void closeView()
