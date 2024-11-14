@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginViewController">
    <children>
       <Label text="Login">
@@ -27,7 +26,7 @@
                         <Font name="HelveticaRounded-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="usernameField" alignment="CENTER_RIGHT" layoutX="250.0" layoutY="34.0" prefHeight="32.0" prefWidth="275.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="34.0" />
+                  <TextField fx:id="usernameField" layoutX="250.0" layoutY="34.0" prefHeight="32.0" prefWidth="275.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="34.0" />
                </children>
             </AnchorPane>
          </children>
@@ -41,7 +40,7 @@
                         <Font name="HelveticaRounded-Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="passwordField" alignment="CENTER_RIGHT" layoutX="250.0" layoutY="34.0" prefHeight="32.0" prefWidth="275.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="34.0" />
+                  <PasswordField fx:id="passwordField" layoutX="250.0" layoutY="34.0" prefHeight="32.0" prefWidth="275.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="34.0" />
                </children>
             </AnchorPane>
          </children>
@@ -63,8 +62,8 @@
          <children>
             <AnchorPane prefHeight="85.0" prefWidth="702.0">
                <children>
-                  <Button onAction="#loginButtonPressed" layoutX="150.0" layoutY="26.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" text="Login" AnchorPane.leftAnchor="150.0" />
-                  <Button onAction="#cancelButtonPressed" layoutX="354.0" layoutY="26.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" text="Cancel" AnchorPane.rightAnchor="150.0" />
+                  <Button layoutX="150.0" layoutY="26.0" mnemonicParsing="false" onAction="#loginButtonPressed" prefHeight="49.0" prefWidth="96.0" text="Login" AnchorPane.leftAnchor="150.0" />
+                  <Button layoutX="354.0" layoutY="26.0" mnemonicParsing="false" onAction="#cancelButtonPressed" prefHeight="49.0" prefWidth="96.0" text="Cancel" AnchorPane.rightAnchor="150.0" />
                </children>
             </AnchorPane>
          </children>

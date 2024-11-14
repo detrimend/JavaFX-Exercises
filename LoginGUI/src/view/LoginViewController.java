@@ -16,11 +16,6 @@ public class LoginViewController
   private ViewHandler viewHandler;
   private LoginModel loginModel;
 
-  public LoginViewController()
-  {
-
-  }
-
   public void init(ViewHandler viewHandler, LoginModel loginModel, Region root)
   {
     this.viewHandler = viewHandler;
@@ -57,8 +52,5 @@ public class LoginViewController
   {
     viewHandler.closeView();
   }
-
-
-
 
 }
